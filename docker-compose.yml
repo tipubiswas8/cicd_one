@@ -5,15 +5,18 @@ services:
     container_name: cicd-one
     volumes:
       - ./:/var/www/html
-    networks: [devnet]
+    networks:
+      devnet:
+        aliases:
+          - php-cicd-one
 
   nginx:
     image: myorg/nginx:latest
-    container_name: nginx-cicd-one
+    container_name: nginx-for-cicd-one
     environment:
       SERVER_NAME: localhost
       DOCUMENT_ROOT: /var/www/html/public # public for laravel project
-      PHP_UPSTREAM: php                   # service name = DNS name on devnet
+      PHP_UPSTREAM: php-cicd-one   # service name = DNS name on devnet, # unique alias
     volumes:
       - ./:/var/www/html
     ports:
