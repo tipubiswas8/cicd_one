@@ -10,10 +10,7 @@
 
 <body>
     <p>CI/CD Test</p>
-    <p>Work at second stage</p>
-    <p>Work at third stage</p>
-    <p>Work at fourth stage</p>
-    <p>Work at fifth stage</p>
+    <p>Work at first stage</p>
 </body>
 
 </html>

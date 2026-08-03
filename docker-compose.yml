@@ -2,14 +2,14 @@
 services:
   php:
     image: php85-cicd-image:1.0
-    container_name: cicd
+    container_name: cicd-one
     volumes:
       - ./:/var/www/html
     networks: [devnet]
 
   nginx:
     image: myorg/nginx:latest
-    container_name: nginx-ati-erp
+    container_name: nginx-cicd-one
     environment:
       SERVER_NAME: localhost
       DOCUMENT_ROOT: /var/www/html/public # public for laravel project
