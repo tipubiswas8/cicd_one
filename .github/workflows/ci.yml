@@ -12,4 +12,7 @@ jobs:
         run: |
           cd /home/sohel/tipu/projects/cicd_one
           git pull origin main
-          php artisan optimize:clear
+          php artisan cache:clear
+          php artisan config:clear
+          php artisan route:clear
+          php artisan view:clear
