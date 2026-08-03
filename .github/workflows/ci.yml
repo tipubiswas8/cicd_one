@@ -12,6 +12,6 @@ jobs:
         run: |
           cd /home/sohel/tipu/projects/cicd_one
           git pull origin main
-          sudo chown -R www-data:www-data storage bootstrap/cache
-          sudo chmod -R 775 storage bootstrap/cache
+          chown -R www-data:www-data storage bootstrap/cache
+          chmod -R 775 storage bootstrap/cache
           docker exec cicd-one php artisan optimize:clear
