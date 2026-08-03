@@ -11,6 +11,7 @@
 <body>
     <p>CI/CD Test</p>
     <p>Work at first stage</p>
+    <p>Work at second stage</p>
 </body>
 
 </html>
