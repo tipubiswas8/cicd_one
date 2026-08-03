@@ -17,6 +17,7 @@
     <p>Work at fifth stage</p>
     <p>Work at sixth stage</p>
     <p>Work at seventh stage</p>
+    <p>Work at stage 9</p>
 </body>
 
 </html>
