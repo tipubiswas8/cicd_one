@@ -13,3 +13,5 @@ jobs:
           cd /home/sohel/tipu/projects/cicd_one
           git pull origin main
           php artisan optimize:clear
+          sudo chown -R www-data:www-data storage bootstrap/cache
+          sudo chmod -R 775 storage bootstrap/cache
