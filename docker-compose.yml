@@ -1,0 +1,28 @@
+
+services:
+  php:
+    image: php85-cicd-image:1.0
+    container_name: cicd
+    volumes:
+      - ./:/var/www/html
+    networks: [devnet]
+
+  nginx:
+    image: myorg/nginx:latest
+    container_name: nginx-ati-erp
+    environment:
+      SERVER_NAME: localhost
+      DOCUMENT_ROOT: /var/www/html/public # public for laravel project
+      PHP_UPSTREAM: php                   # service name = DNS name on devnet
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8085:80"
+    depends_on:
+      - php
+    networks: [devnet]
+
+networks:
+  devnet:
+    external: true
+    driver: bridge
