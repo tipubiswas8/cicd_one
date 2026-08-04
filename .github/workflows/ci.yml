@@ -8,13 +8,13 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Pull latest code and refresh app
+      - name: Pull latest code
         run: |
           cd /home/sohel/tipu/projects/cicd_one
           git pull origin main
-          
+
       - name: Rebuild and restart containers
         run: |
-          cd /home/sohel/tipu/projects/cicd_two
+          cd /home/sohel/tipu/projects/cicd_one
           docker compose down
           docker compose up -d --build
